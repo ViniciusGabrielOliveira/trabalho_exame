@@ -57,6 +57,7 @@ public class AlunoGradController {
 		
 		
 		Optional<AlunoGrad> alunoGradUpdate = alunoGradService.findByMatricula(matricula);
+		
 
 		AlunoGrad alunoSalvo = alunoGradService.update(alunoGrad, alunoGradUpdate.get());
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(alunoGrad.getAlu_matricula()).toUri();
