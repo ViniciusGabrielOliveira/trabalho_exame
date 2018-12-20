@@ -1,0 +1,288 @@
+<html><head>
+<title>Schema Report for database: lab04db</title>
+<style>
+        td,th {
+        text-align:left;
+        vertical-align:middle;
+        }
+        table {
+        border-collapse: collapse;
+        border: 1px solid;
+        }
+        caption, th, td {
+        padding: .2em .8em;
+        border: 1px solid #000000;
+        }
+        caption {
+        background: #D3D3D3;
+        font-weight: bold;
+        font-size: 1.1em;
+        }
+        th {
+        font-weight: bold;
+        background: #000000;
+        color: white;
+        }
+        td {
+        background: #FFFFFF;
+        }
+        </style>
+      </head>
+     <body>
+<h1>Schema Report for database: lab04db</h1>
+<a id="home">Table List </a><br /><ul>
+<li><a href="#categoria">categoria </a></li>
+<li><a href="#cliente">cliente </a></li>
+<li><a href="#endereco">endereco </a></li>
+<li><a href="#estoque">estoque </a></li>
+<li><a href="#fornecedor">fornecedor </a></li>
+<li><a href="#fornecedor_produto">fornecedor_produto </a></li>
+<li><a href="#funcionario">funcionario </a></li>
+<li><a href="#pessoa">pessoa </a></li>
+<li><a href="#produto">produto </a></li>
+<li><a href="#telefone">telefone </a></li>
+<li><a href="#telefone_cliente">telefone_cliente </a></li>
+<li><a href="#telefone_fornecedor">telefone_fornecedor </a></li>
+<li><a href="#usuario">usuario </a></li>
+<li><a href="#venda">venda </a></li>
+</ul>
+<a id="categoria"></a><table style="width:100%"><caption>Table: categoria </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Identificador da tabela categoria.</td></tr>
+<tr><td>nome</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Descrição da categoria.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="cliente"></a><table style="width:100%"><caption>Table: cliente </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>endereco_id</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td>Identificador da tabela endereco.</td></tr>
+<tr><td>pessoa_id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Identificador da tabela pessoa.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="endereco"></a><table style="width:100%"><caption>Table: endereco </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Identificador da tabela endereco.</td></tr>
+<tr><td>rua</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Nome da rua.</td></tr>
+<tr><td>numero</td><td>INT(10)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Numero da residência</td></tr>
+<tr><td>bairro</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Bairro da residência.</td></tr>
+<tr><td>cidade</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Cidade da residência</td></tr>
+<tr><td>estado</td><td>INT(10)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Código referente ao estado federativo da residência</td></tr>
+<tr><td>cep</td><td>INT(8)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Número do código de endereçamento postal.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="estoque"></a><table style="width:100%"><caption>Table: estoque </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Identificador da tabela estoque.</td></tr>
+<tr><td>id_produto</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td>Identificador da tabela produto.</td></tr>
+<tr><td>qtd_produto</td><td>INT(50)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Quantidade do produto em estoque.</td></tr>
+<tr><td>qtd_minima</td><td>INT(50)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Quantidade mínima do produto em estoque.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="fornecedor"></a><table style="width:100%"><caption>Table: fornecedor </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Identificador da tabela forncedor.</td></tr>
+<tr><td>nome</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Nome do fornecedor do produto.</td></tr>
+<tr><td>cnpj</td><td>INT(14)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Número do cadastro CNPJ do fornecedor.</td></tr>
+<tr><td>id_endereco</td><td>INT(20)</td><td>No</td><td>No</td><td>Yes</td><td>NULL</td><td>Identificador da tabela endereco</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="fornecedor_produto"></a><table style="width:100%"><caption>Table: fornecedor_produto </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id_fornecedor</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Identificador da tabela forncedor.</td></tr>
+<tr><td>id_produto</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Identificador da tabela produto.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="funcionario"></a><table style="width:100%"><caption>Table: funcionario </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>usuario_id</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td>Identificador da tabela usuario.</td></tr>
+<tr><td>pessoa_id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Identificador da tabela pessoa.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="pessoa"></a><table style="width:100%"><caption>Table: pessoa </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td></td></tr>
+<tr><td>nome</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Nome completo atribuído à pessoa.</td></tr>
+<tr><td>cpf</td><td>INT(12)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Número de Cadastro de Pessoa Física (CPF) atribuído à pessoa.</td></tr>
+<tr><td>rg</td><td>INT(9)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Número de Registro Geral (RG) atribuído à pessoa.</td></tr>
+<tr><td>data_nascimento</td><td>DATETIME</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Data de Nascimento da pessoa.</td></tr>
+<tr><td>sexo</td><td>VARCHAR(2)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Sexo atribuído à pessoa, será definido um código de atribuição que poderá ser (Masculino,Feminino,Não Informado).</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="produto"></a><table style="width:100%"><caption>Table: produto </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Identificador da tabela produto.</td></tr>
+<tr><td>id_categoria</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td>Identificador da tabela categoria.</td></tr>
+<tr><td>nome</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Descrição do nome do produto.</td></tr>
+<tr><td>marca</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Descrição da marca do produto.</td></tr>
+<tr><td>modelo</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Descriçaõ do modelo do produto.</td></tr>
+<tr><td>cor</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Descriçaõ da cor do produto, caso aplicado.</td></tr>
+<tr><td>tamanho</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Descrição do tamanho do produto, caso aplicado.</td></tr>
+<tr><td>valor</td><td>DOUBLE</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Descrição do valor do produto.</td></tr>
+<tr><td>observacao</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Observações complementares ao produto.</td></tr>
+<tr><td>data_fabricacao</td><td>DATETIME</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Data de fabricação do produto.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="telefone"></a><table style="width:100%"><caption>Table: telefone </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Identificador da tabela telefone.</td></tr>
+<tr><td>numero</td><td>INT(11)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Número do telefone</td></tr>
+<tr><td>ddd</td><td>INT(11)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Código DDD do Telefone.</td></tr>
+<tr><td>tipo</td><td>INT(2)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Codigo referente ao tipo de telefone.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="telefone_cliente"></a><table style="width:100%"><caption>Table: telefone_cliente </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>telefone_id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Identificador da tabela telefone.</td></tr>
+<tr><td>pessoa_id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Identificador da tabela pessoa.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="telefone_fornecedor"></a><table style="width:100%"><caption>Table: telefone_fornecedor </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>telefone_id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Identificador da tabela telefone.</td></tr>
+<tr><td>fornecedor_id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Identificador da tabela fornecedor.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="usuario"></a><table style="width:100%"><caption>Table: usuario </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Identificador da tabela Usuario</td></tr>
+<tr><td>nome</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Nome do login de usuário.</td></tr>
+<tr><td>senha</td><td>VARCHAR(20)</td><td>No</td><td>No</td><td>No</td><td>NULL</td><td>Senha de usuário.</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="venda"></a><table style="width:100%"><caption>Table: venda </caption>
+<tr><td>Table Comments</td><td colspan="6"></td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>id</td><td>INT(20)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Identificador da tabela venda.</td></tr>
+<tr><td>id_cliente</td><td>INT(20)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td>Identificador da tabela cliente.</td></tr>
+<tr><td>id_produto</td><td>INT(20)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td>Identificador da tabela produto.</td></tr>
+<tr><td>id_funcionario</td><td>INT(11)</td><td>Yes</td><td>No</td><td>Yes</td><td></td><td>Identificador da tabela funcionario.</td></tr>
+<tr><td>forma_pgto</td><td>INT(20)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Codigo referente à forma de pagamento.</td></tr>
+<tr><td>valor_pago</td><td>DOUBLE</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Valor pago pela venda do produto.</td></tr>
+<tr><td>num_parcelas</td><td>INT(10)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Número de parcelas da venda do produto.</td></tr>
+</table><a href="#home">Table List </a></br>
+</body></html>

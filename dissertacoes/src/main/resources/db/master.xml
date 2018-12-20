@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    
+	<preConditions>
+		<dbms type="mysql" />
+	</preConditions>
+	
+	<include file="db/scripts/aluno.sql"/>
+	<include file="db/scripts/alunoGrad.sql"/>
+	<include file="db/scripts/alunoPos.sql"/>
+	<include file="db/scripts/professor.sql"/>
+	<include file="db/scripts/dissertacao.sql" />
+	<include file="db/scripts/aluno_inserts.sql"/>
+	<include file="db/scripts/alunoGrad_inserts.sql"/>
+	<include file="db/scripts/alunoPos_inserts.sql"/>
+	<include file="db/scripts/professor_inserts.sql"/>
+	<include file="db/scripts/dissertacao_inserts.sql" />
+	
+</databaseChangeLog>
