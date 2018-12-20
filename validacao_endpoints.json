@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "5cfdf311-df65-4181-ad1b-522afb541fba",
+		"name": "Gerenciador de Dissertacoes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Aluno Graduação",
+			"item": [
+				{
+					"name": "cadastrar aluno de graduação",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "63376cf2-c361-4c05-9a04-e08b3f8a863e",
+								"exec": [
+									"tests [\"verifica a resposta\"] = responseCode.code === 201;",
+									"",
+									"var response = JSON.parse(responseBody);",
+									"",
+									"tests [\"verifica matricula\"] = response.data.matricula !== null;",
+									"tests [\"verifica nome\"] = response.data.nome === \"vinicius oliveira\";",
+									"",
+									"tests [\"verifica ausencia de erros\"] = response.errors.isEmpty;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"alu_matricula\": 5555,\n    \"alu_nome\": \"vinicius oliveira\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/AlunoGrad/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"AlunoGrad",
+								"new"
+							]
+						},
+						"description": "teste do metodo cadastrar aluno"
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar aluno de graduação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
